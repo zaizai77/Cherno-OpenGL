@@ -17,7 +17,8 @@ Shader::~Shader(){
 }
 
 void Shader::Bind() const {
-    GLCall(glUseProgram(m_RenderID));
+    //GLCall(glUseProgram(m_RenderID));
+    glUseProgram(m_RenderID);
 }
 
 void Shader::UnBind() const {

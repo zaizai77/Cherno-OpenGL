@@ -22,6 +22,7 @@
 #include "imgui/imgui_impl_opengl3.h"
 
 #include "tests/TestClearColor.h"
+#include "tests/TestTexture2D.h"
 
 int main(void)
 {
@@ -68,6 +69,7 @@ int main(void)
     currentTest = TestMenu;
 
     TestMenu->RegisterTest<test::TestClearColor>("Clear Color");
+    TestMenu->RegisterTest<test::TestTexture2D>("TestTexture2D");
 
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
@@ -101,14 +103,14 @@ int main(void)
 
         /* Poll for and process events */
         glfwPollEvents();
-    
-        if (currentTest != TestMenu) {
-            delete currentTest;
-            currentTest = nullptr;
-        }
-        delete TestMenu;
-        TestMenu = nullptr;
 }
+    if (currentTest != TestMenu) {
+        delete currentTest;
+        currentTest = nullptr;
+    }
+    delete TestMenu;
+    TestMenu = nullptr;
+
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplGlfw_Shutdown();
     ImGui::DestroyContext();
