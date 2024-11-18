@@ -1,0 +1,59 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.33.31630.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///d:/vs2022/openglproject/opengl/src/vertexbuffer.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "4d98d0fb59fa889f799c4e1b5efcd0a1ef943fb6251d5ec37eda23e4eda3d128"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/vs2022/openglproject/opengl/src/vertexbuffer.h"
+          },
+          "hashes": {
+            "sha-256": "5b8de6180e0e4207f4683fd04de5ba17d5e8c36d9efa0ffcb0f15ddee67d00a0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/vs2022/openglproject/opengl/src/render.h"
+          },
+          "hashes": {
+            "sha-256": "fdb1b419c7335c66f99515be5df9362912a2d0a800fd6ebe966c07c1fc4c3897"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/vs2022/openglproject/opengl/depedencies/glew/include/gl/glew.h"
+          },
+          "hashes": {
+            "sha-256": "1a2d50dc00a69940838cb3b5413cf7a7ac3cee8078672f27ffbfa2d3b88ad344"
+          }
+        }
+      ]
+    }
+  ]
+}
