@@ -23,6 +23,16 @@
 
 #include "tests/TestClearColor.h"
 #include "tests/TestTexture2D.h"
+#include "tests/TestTextureBlend.h"
+
+//这里我们检查用户是否按下了返回键(Esc)（如果没有按下，glfwGetKey将会返回GLFW_RELEASE。
+//如果用户的确按下了返回键，我们将通过使用glfwSetwindowShouldClose把WindowShouldClose属性设置为 
+//true来关闭GLFW。下一次while循环的条件检测将会失败，程序将关闭。
+void processInput(GLFWwindow* window) {
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
+        glfwSetWindowShouldClose(window, true);
+    }
+}
 
 int main(void)
 {
@@ -70,11 +80,12 @@ int main(void)
 
     TestMenu->RegisterTest<test::TestClearColor>("Clear Color");
     TestMenu->RegisterTest<test::TestTexture2D>("TestTexture2D");
+    TestMenu->RegisterTest<test::TestTextureBlend>("TestTextureBlend");
 
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
     {
-        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         render.Clear();
 
         // Start the Dear ImGui frame
@@ -98,12 +109,18 @@ int main(void)
         ImGui::Render();
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
+        processInput(window);
+
         /* Swap front and back buffers */
+        //函数会交换颜色缓冲（它是一个储存着GLFW窗口每一个像素颜色值的大缓冲），
+        //它在这一迭代中被用来绘制，并且将会作为输出显示在屏幕上
         glfwSwapBuffers(window);
 
-        /* Poll for and process events */
+        //函数检查有没有触发什么事件（比如键盘输入、鼠标移动等）、
+        //更新窗口状态，并调用对应的回调函数（可以通过回调方法手动设置）。
         glfwPollEvents();
-}
+    }
+
     if (currentTest != TestMenu) {
         delete currentTest;
         currentTest = nullptr;
