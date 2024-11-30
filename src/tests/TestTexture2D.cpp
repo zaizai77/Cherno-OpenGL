@@ -9,7 +9,7 @@
 namespace test {
     TestTexture2D::TestTexture2D()
         :m_Proj(glm::ortho(0.0f, 960.0f, 0.0f, 720.0f, -1.0f, 1.0f)),
-        m_View(glm::translate(glm::mat4(1.0f), glm::vec3(-100, 0, 0))),
+        m_View(glm::translate(glm::mat4(1.0f), glm::vec3(100, 0, 0))),
         m_TranslationA(glm::vec3(200, 200, 0)), m_TranslationB(glm::vec3(400, 200, 0))
     {
         float positions[] = {

@@ -8,7 +8,9 @@
 
 namespace test {
 	TestTextureBlend::TestTextureBlend() 
-		: m_Proj(glm::ortho(0.0f,960.0f,0.0f,720.0f,-1.0f,1.0f)),m_TranslationA(0.5f)
+		: m_Proj(glm::ortho(0.0f,960.0f,0.0f,720.0f,-1.0f,1.0f)),
+		m_View(glm::translate(glm::mat4(1.0f), glm::vec3(100, 0, 0))),
+		m_TranslationA(0.5f)
 	{
 		float positions[] = {
 			100.0f, 100.0f, 0.0f, 0.0f,  // 0
@@ -37,10 +39,10 @@ namespace test {
 		m_Shader = std::make_unique<Shader>("res/shaders/TestTextureBlend.shader"); 
 		m_Shader->Bind();
 		m_Shader->SetUniform4f("u_Color", 0.2f, 0.3f, 0.8f, 1.0f);
-		m_Shader->SetUniform1i("u_Texture0", 0);
+		m_Shader->SetUniform1i("u_Texture", 0);
 		m_Shader->SetUniform1i("u_Texture1", 1);
 
-		m_Texture0 = std::make_unique<Texture>("res/textures/bluesquare.png");
+		m_Texture0 = std::make_unique<Texture>("res/textures/14fnm.png");
 		m_Texture1 = std::make_unique<Texture>("res/textures/smileface.png");
 	}
 
@@ -62,10 +64,14 @@ namespace test {
 		m_Texture1->Bind(1);
 
 		{
-			m_Shader->Bind();
-			//m_Shader->SetUniform1f("u_percent", m_TranslationA);
+			const glm::mat4 model = glm::mat4(1.0f);
+			const glm::mat4 mvp = m_Proj * m_View * model;
 
-			renderer.Draw(*m_VAO, *m_IndexBuffer, *m_Shader);
+			m_Shader->Bind();
+			m_Shader->SetUniformMat4f("u_MVP", mvp);
+			m_Shader->SetUniform1f("u_percent", m_TranslationA);
+
+			GLCall(renderer.Draw(*m_VAO, *m_IndexBuffer, *m_Shader));
 		}
 	}
 
