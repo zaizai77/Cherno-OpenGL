@@ -5,11 +5,12 @@
 
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
+#include <GLFW/glfw3.h>
 
 namespace test {
 	TestTextureBlend::TestTextureBlend() 
-		: m_Proj(glm::ortho(0.0f,960.0f,0.0f,720.0f,-1.0f,1.0f)),
-		m_View(glm::translate(glm::mat4(1.0f), glm::vec3(100, 0, 0))),
+		: m_Proj(glm::ortho(0.0f,600.0f,0.0f,500.0f,-1.0f,1.0f)),
+		m_View(glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0))),
 		m_TranslationA(0.5f)
 	{
 		float positions[] = {
@@ -64,7 +65,16 @@ namespace test {
 		m_Texture1->Bind(1);
 
 		{
-			const glm::mat4 model = glm::mat4(1.0f);
+			glm::mat4 model = glm::mat4(1.0f);
+			//model = glm::translate(model, glm::vec3(0.5f, -0.5f, 0.0f));
+			//转到屏幕外面去了
+			//model = glm::rotate(model, (float)glfwGetTime(), glm::vec3(0.0, 0.0, 1.0));
+
+			//不知道哪里写错了，画不出来
+			//m_View = glm::translate(m_View, glm::vec3(0.0f, 0.0f, -3.0f));
+			//float screenWidth = 600.0f, screenHeight = 500.0f;
+			//m_Proj = glm::perspective(glm::radians(45.0f), screenWidth / screenHeight, 0.1f, 100.0f);
+
 			const glm::mat4 mvp = m_Proj * m_View * model;
 
 			m_Shader->Bind();

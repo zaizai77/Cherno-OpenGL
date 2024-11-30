@@ -24,6 +24,7 @@
 #include "tests/TestClearColor.h"
 #include "tests/TestTexture2D.h"
 #include "tests/TestTextureBlend.h"
+#include "tests/TestTenRotateCube.h"
 
 //这里我们检查用户是否按下了返回键(Esc)（如果没有按下，glfwGetKey将会返回GLFW_RELEASE。
 //如果用户的确按下了返回键，我们将通过使用glfwSetwindowShouldClose把WindowShouldClose属性设置为 
@@ -81,6 +82,7 @@ int main(void)
     TestMenu->RegisterTest<test::TestClearColor>("Clear Color");
     TestMenu->RegisterTest<test::TestTexture2D>("TestTexture2D");
     TestMenu->RegisterTest<test::TestTextureBlend>("TestTextureBlend");
+    TestMenu->RegisterTest<test::TestTenRotateCube>("TestTenRotateCube");
 
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
