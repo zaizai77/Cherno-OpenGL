@@ -30,7 +30,7 @@
 //如果用户的确按下了返回键，我们将通过使用glfwSetwindowShouldClose把WindowShouldClose属性设置为 
 //true来关闭GLFW。下一次while循环的条件检测将会失败，程序将关闭。
 void processInput(GLFWwindow* window) {
-    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
+    if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS) {
         glfwSetWindowShouldClose(window, true);
     }
 }
@@ -97,6 +97,7 @@ int main(void)
 
         if (currentTest) {
             currentTest->OnUpdate(0.0f);
+            currentTest->ProcessInput(window);
             currentTest->OnRender();
             ImGui::Begin("Test");
             // 后退
@@ -108,10 +109,11 @@ int main(void)
             ImGui::End();
         }
 
+
+
         ImGui::Render();
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
-        processInput(window);
 
         /* Swap front and back buffers */
         //函数会交换颜色缓冲（它是一个储存着GLFW窗口每一个像素颜色值的大缓冲），

@@ -3,6 +3,9 @@
 #include <iostream>
 #include <vector>
 
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
+
 namespace test {
 	class Test {
 	public:
@@ -12,6 +15,7 @@ namespace test {
 		virtual void OnUpdate(float delteTime) {}
 		virtual void OnRender() {}
 		virtual void OnImGuiRender() {}
+		virtual void ProcessInput(GLFWwindow* window) {}
 	};
 
 	class TestMenu : public Test {
