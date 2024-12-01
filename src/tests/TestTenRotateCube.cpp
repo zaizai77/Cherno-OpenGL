@@ -104,6 +104,7 @@ namespace test {
 	}
 
     void TestTenRotateCube::OnStart(GLFWwindow* window) {
+        glEnable(GL_DEPTH_TEST);
         m_Window = window;
 
         glfwSetWindowUserPointer(m_Window, reinterpret_cast<void*>(this));
@@ -120,6 +121,7 @@ namespace test {
 	}
 
 	void TestTenRotateCube::OnRender() {
+        ProcessInput(m_Window);
         GLCall(glClearColor(0.0f, 0.0f, 0.0f, 1.0f));
         GLCall(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT));
 

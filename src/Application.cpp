@@ -25,6 +25,7 @@
 #include "tests/TestTexture2D.h"
 #include "tests/TestTextureBlend.h"
 #include "tests/TestTenRotateCube.h"
+#include "tests/TestLightColor.h"
 
 using namespace test;
 
@@ -76,6 +77,7 @@ int main(void)
     TestMenu->RegisterTest<test::TestTexture2D>("TestTexture2D");
     TestMenu->RegisterTest<test::TestTextureBlend>("TestTextureBlend");
     TestMenu->RegisterTest<test::TestTenRotateCube>("TestTenRotateCube");
+    TestMenu->RegisterTest<test::TestLightColor>("TestLightColor");
 
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
@@ -91,7 +93,7 @@ int main(void)
         if (currentTest) {
             currentTest->OnStart(window);
             currentTest->OnUpdate(0.0f);
-            currentTest->ProcessInput(window);
+            //currentTest->ProcessInput(window);
             currentTest->OnRender();
             ImGui::Begin("Test");
             // 后退
@@ -102,8 +104,6 @@ int main(void)
             currentTest->OnImGuiRender();
             ImGui::End();
         }
-
-
 
         ImGui::Render();
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());

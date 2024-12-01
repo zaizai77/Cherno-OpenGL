@@ -78,6 +78,9 @@
     <ClCompile Include="src\tests\TestTenRotateCube.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\tests\TestLightColor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\Basic.shader" />
@@ -497,6 +500,8 @@
     </None>
     <None Include="res\shaders\TestTextureBlend.shader" />
     <None Include="res\shaders\TenRotateCube.shader" />
+    <None Include="res\shaders\LightColor.shader" />
+    <None Include="res\shaders\LightCube.shader" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Render.h">
@@ -1427,6 +1432,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\tests\TestTenRotateCube.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Camera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tests\TestLightColor.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

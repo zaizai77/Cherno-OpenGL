@@ -139,6 +139,7 @@
     <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\tests\Test.cpp" />
     <ClCompile Include="src\tests\TestClearColor.cpp" />
+    <ClCompile Include="src\tests\TestLightColor.cpp" />
     <ClCompile Include="src\tests\TestTenRotateCube.cpp" />
     <ClCompile Include="src\tests\TestTexture2D.cpp" />
     <ClCompile Include="src\tests\TestTextureBlend.cpp" />
@@ -157,6 +158,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\Basic.shader" />
+    <None Include="res\shaders\LightColor.shader" />
+    <None Include="res\shaders\LightCube.shader" />
     <None Include="res\shaders\TenRotateCube.shader" />
     <None Include="res\shaders\TestTextureBlend.shader" />
     <None Include="src\vendor\glm\detail\func_common.inl" />
@@ -299,11 +302,13 @@
     <None Include="src\vendor\glm\gtx\wrap.inl" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Camera.h" />
     <ClInclude Include="src\IndexBuffer.h" />
     <ClInclude Include="src\Render.h" />
     <ClInclude Include="src\Shader.h" />
     <ClInclude Include="src\tests\Test.h" />
     <ClInclude Include="src\tests\TestClearColor.h" />
+    <ClInclude Include="src\tests\TestLightColor.h" />
     <ClInclude Include="src\tests\TestTenRotateCube.h" />
     <ClInclude Include="src\tests\TestTexture2D.h" />
     <ClInclude Include="src\tests\TestTextureBlend.h" />

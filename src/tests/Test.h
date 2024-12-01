@@ -7,6 +7,10 @@
 #include <GLFW/glfw3.h>
 
 namespace test {
+
+	const unsigned int SCR_WIDTH = 960;
+	const unsigned int SCR_HEIGHT = 720;
+
 	class Test {
 	public:
 		Test() {}
