@@ -1,3 +1,4 @@
+
 #include "TestTenRotateCube.h"
 
 #include "Render.h"
@@ -9,6 +10,10 @@
 
 
 namespace test {
+
+    void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
+    void mouse_callback(GLFWwindow* window, double xposIn, double yposIn);
+
 	TestTenRotateCube::TestTenRotateCube() {
         float vertices[] = {
         -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
@@ -98,6 +103,18 @@ namespace test {
 
 	}
 
+    void TestTenRotateCube::OnStart(GLFWwindow* window) {
+        m_Window = window;
+
+        glfwSetWindowUserPointer(m_Window, reinterpret_cast<void*>(this));
+
+        glfwSetCursorPosCallback(m_Window, test::mouse_callback);
+        glfwSetScrollCallback(m_Window, test::scroll_callback);
+
+        // tell GLFW to capture our mouse
+        glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+    }
+
 	void TestTenRotateCube::OnUpdate(float deltaTime) {
 
 	}
@@ -166,7 +183,7 @@ namespace test {
 
         {
             glm::mat4 projection = glm::mat4(1.0f);
-            projection = glm::perspective(glm::radians(45.0f), 960.0f / 540.0f, 0.1f, 100.0f);
+            projection = glm::perspective(glm::radians(fov), 960.0f / 540.0f, 0.1f, 100.0f);
 
             m_Shader->Bind();
             m_Shader->SetUniformMat4f("projection", projection);
@@ -191,7 +208,10 @@ namespace test {
 	}
 
     void TestTenRotateCube::ProcessInput(GLFWwindow* window) {
-        float cameraSpeed = 0.005f; // adjust accordingly
+        if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS) {
+            glfwSetWindowShouldClose(window, true);
+        }
+        float cameraSpeed = static_cast<float>(2.5 * deltaTime);
         if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
             cameraPos += cameraSpeed * cameraFront;
         if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
@@ -200,6 +220,63 @@ namespace test {
             cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
         if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
             cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+    }
+
+    void mouse_callback(GLFWwindow* window, double xposIn, double yposIn) {
+        TestTenRotateCube* wind = reinterpret_cast<TestTenRotateCube*>(glfwGetWindowUserPointer(window));
+        wind->mouse_callback_fun(window, xposIn, yposIn);
+    }
+
+    void TestTenRotateCube::mouse_callback_fun(GLFWwindow* window, double xposIn, double yposIn) {
+        float xpos = static_cast<float>(xposIn);
+        float ypos = static_cast<float>(yposIn);
+
+        if (firstMouse) {
+            lastX = xpos;
+            lastY = ypos;
+            firstMouse = false;
+        }
+
+        float xoffset = xpos - lastX;
+        float yoffset = lastY - ypos; // reversed since y-coordinates go from bottom to top
+        lastX = xpos;
+        lastY = ypos;
+
+        float sensitivity = 0.1f; // change this value to your liking
+        xoffset *= sensitivity;
+        yoffset *= sensitivity;
+
+        yaw += xoffset;
+        pitch += yoffset;
+
+        // make sure that when pitch is out of bounds, screen doesn't get flipped
+        if (pitch > 89.0f)
+            pitch = 89.0f;
+        if (pitch < -89.0f)
+            pitch = -89.0f;
+
+        glm::vec3 front;
+        front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
+        front.y = sin(glm::radians(pitch));
+        front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
+        cameraFront = glm::normalize(front);
+    }
+
+    void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
+        TestTenRotateCube* wind = reinterpret_cast<TestTenRotateCube*>(glfwGetWindowUserPointer(window));
+        wind->scroll_callback_fun(window, xoffset, yoffset);
+    }
+
+    // glfw: whenever the mouse scroll wheel scrolls, this callback is called
+// ----------------------------------------------------------------------
+    void TestTenRotateCube::scroll_callback_fun(GLFWwindow* window, double xoffset, double yoffset) {
+        fov -= (float)yoffset;
+        if (fov < 1.0f) {
+            fov = 1.0f;
+        }
+        if (fov > 45.0f) {
+            fov = 45.0f;
+        }
     }
 
 	void TestTenRotateCube::OnImGuiRender() {

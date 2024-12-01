@@ -26,14 +26,7 @@
 #include "tests/TestTextureBlend.h"
 #include "tests/TestTenRotateCube.h"
 
-//这里我们检查用户是否按下了返回键(Esc)（如果没有按下，glfwGetKey将会返回GLFW_RELEASE。
-//如果用户的确按下了返回键，我们将通过使用glfwSetwindowShouldClose把WindowShouldClose属性设置为 
-//true来关闭GLFW。下一次while循环的条件检测将会失败，程序将关闭。
-void processInput(GLFWwindow* window) {
-    if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS) {
-        glfwSetWindowShouldClose(window, true);
-    }
-}
+using namespace test;
 
 int main(void)
 {
@@ -96,6 +89,7 @@ int main(void)
         ImGui::NewFrame();
 
         if (currentTest) {
+            currentTest->OnStart(window);
             currentTest->OnUpdate(0.0f);
             currentTest->ProcessInput(window);
             currentTest->OnRender();

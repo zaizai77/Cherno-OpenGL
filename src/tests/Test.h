@@ -12,6 +12,7 @@ namespace test {
 		Test() {}
 		virtual ~Test() {}
 
+		virtual void OnStart(GLFWwindow* window) {}
 		virtual void OnUpdate(float delteTime) {}
 		virtual void OnRender() {}
 		virtual void OnImGuiRender() {}
