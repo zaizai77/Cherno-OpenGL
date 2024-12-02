@@ -1,4 +1,5 @@
 #pragma once
+#include <Texture.h>
 
 #include "Test.h"
 #include "Camera.h"
@@ -58,5 +59,7 @@ namespace test {
 		std::unique_ptr<VertexBuffer> m_VertexBuffer;
 		std::unique_ptr<Shader> m_ColorShader;
 		std::unique_ptr<Shader> m_CubeShader;
+		std::unique_ptr<Texture> m_Texture0;
+		std::unique_ptr<Texture> m_Texture1;
 	};
 }
