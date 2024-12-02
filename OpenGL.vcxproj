@@ -140,6 +140,7 @@
     <ClCompile Include="src\tests\TestLightCasterDirectional.cpp" />
     <ClCompile Include="src\tests\Test.cpp" />
     <ClCompile Include="src\tests\TestClearColor.cpp" />
+    <ClCompile Include="src\tests\TestLightCasterPoint.cpp" />
     <ClCompile Include="src\tests\TestLightColor.cpp" />
     <ClCompile Include="src\tests\TestTenRotateCube.cpp" />
     <ClCompile Include="src\tests\TestTexture2D.cpp" />
@@ -159,6 +160,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\Basic.shader" />
+    <None Include="res\shaders\LightCasterPoint.shader" />
     <None Include="res\shaders\LightColor.shader" />
     <None Include="res\shaders\LightCube.shader" />
     <None Include="res\shaders\LightCasterDirectional.shader" />
@@ -311,6 +313,7 @@
     <ClInclude Include="src\tests\TestLightCasterDirectional.h" />
     <ClInclude Include="src\tests\Test.h" />
     <ClInclude Include="src\tests\TestClearColor.h" />
+    <ClInclude Include="src\tests\TestLightCasterPoint.h" />
     <ClInclude Include="src\tests\TestLightColor.h" />
     <ClInclude Include="src\tests\TestTenRotateCube.h" />
     <ClInclude Include="src\tests\TestTexture2D.h" />

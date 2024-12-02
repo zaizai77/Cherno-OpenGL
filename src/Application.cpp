@@ -27,6 +27,7 @@
 #include "tests/TestTenRotateCube.h"
 #include "tests/TestLightColor.h"
 #include "tests/TestLightCasterDirectional.h"
+#include "tests/TestLightCasterPoint.h"
 
 using namespace test;
 
@@ -80,6 +81,7 @@ int main(void)
     TestMenu->RegisterTest<test::TestTenRotateCube>("TestTenRotateCube");
     TestMenu->RegisterTest<test::TestLightColor>("TestLightColor");
     TestMenu->RegisterTest<test::TestLightCasterDirectional>("TestLightCasterDirectional");
+    TestMenu->RegisterTest<test::TestLightCasterPoint>("TestLightCasterPoint");
 
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
