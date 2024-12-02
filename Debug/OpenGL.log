@@ -1,10 +1,26 @@
 ﻿  TestLightColor.cpp
-D:\vs2022\OpenGLProject\OpenGL\src\tests\TestLightColor.cpp(140,27): warning C4244: “=”: 从“double”转换到“T”，可能丢失数据
+D:\vs2022\OpenGLProject\OpenGL\src\tests\TestLightColor.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\vs2022\OpenGLProject\OpenGL\src\tests\TestLightColor.cpp(128,27): warning C4244: “=”: 从“double”转换到“T”，可能丢失数据
           with
           [
               T=float
           ]
-D:\vs2022\OpenGLProject\OpenGL\src\tests\TestLightColor.cpp(141,48): warning C4244: “=”: 从“double”转换到“T”，可能丢失数据
+D:\vs2022\OpenGLProject\OpenGL\src\tests\TestLightColor.cpp(129,27): warning C4244: “=”: 从“double”转换到“T”，可能丢失数据
+          with
+          [
+              T=float
+          ]
+D:\vs2022\OpenGLProject\OpenGL\src\tests\TestLightColor.cpp(130,27): warning C4244: “=”: 从“double”转换到“T”，可能丢失数据
+          with
+          [
+              T=float
+          ]
+D:\vs2022\OpenGLProject\OpenGL\src\tests\TestLightColor.cpp(154,27): warning C4244: “=”: 从“double”转换到“T”，可能丢失数据
+          with
+          [
+              T=float
+          ]
+D:\vs2022\OpenGLProject\OpenGL\src\tests\TestLightColor.cpp(155,48): warning C4244: “=”: 从“double”转换到“T”，可能丢失数据
           with
           [
               T=float

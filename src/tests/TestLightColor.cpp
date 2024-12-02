@@ -124,10 +124,24 @@ namespace test {
         GLCall(glClearColor(0.0f, 0.0f, 0.0f, 1.0f));
         GLCall(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT));
 
+        glm::vec3 lightColor;
+        lightColor.x = sin(glfwGetTime() * 2.0f);
+        lightColor.y = sin(glfwGetTime() * 0.7f);
+        lightColor.z = sin(glfwGetTime() * 1.3f);
+
+        glm::vec3 diffuseColor = lightColor * glm::vec3(0.5f); // 降低影响
+        glm::vec3 ambientColor = diffuseColor * glm::vec3(0.2f); // 很低的影响
+
         GLCall(m_ColorShader->Bind());
 
-        GLCall(m_ColorShader->SetUniform3f("objectColor", 1.0f, 0.5f, 0.31f));
-        GLCall(m_ColorShader->SetUniform3f("lightColor", 1.0f, 1.0f, 1.0f));
+        GLCall(m_ColorShader->SetUniform3f("light.ambient", ambientColor));
+        GLCall(m_ColorShader->SetUniform3f("light.diffuse", diffuseColor));
+        GLCall(m_ColorShader->SetUniform3f("light.specular", 1.0f, 1.0f, 1.0f);)
+
+        GLCall(m_ColorShader->SetUniform3f("material.ambient", 1.0f, 0.5f, 0.31f));
+        GLCall(m_ColorShader->SetUniform3f("material.diffuse", 1.0f, 0.5f, 0.31f));
+        GLCall(m_ColorShader->SetUniform3f("material.specular", 0.5f, 0.5f, 0.5f));
+        GLCall(m_ColorShader->SetUniform1f("material.shininess", 32.0f));
 
         //glm::mat4 projection = glm::mat4(1.0f);
         glm::mat4  projection = glm::perspective(glm::radians(camera.Zoom),
