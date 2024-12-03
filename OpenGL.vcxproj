@@ -140,6 +140,7 @@
     <ClCompile Include="src\tests\TestLightCasterDirectional.cpp" />
     <ClCompile Include="src\tests\Test.cpp" />
     <ClCompile Include="src\tests\TestClearColor.cpp" />
+    <ClCompile Include="src\tests\TestLightCasterFlashLight.cpp" />
     <ClCompile Include="src\tests\TestLightCasterPoint.cpp" />
     <ClCompile Include="src\tests\TestLightColor.cpp" />
     <ClCompile Include="src\tests\TestTenRotateCube.cpp" />
@@ -159,11 +160,14 @@
     <ClCompile Include="src\VertexBuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="res\shaders\Basic.shader" />
+    <None Include="res\shaders\LightCasterFlashLight.shader" />
     <None Include="res\shaders\LightCasterPoint.shader" />
     <None Include="res\shaders\LightColor.shader" />
     <None Include="res\shaders\LightCube.shader" />
     <None Include="res\shaders\LightCasterDirectional.shader" />
+    <None Include="res\shaders\Multiple_Light.shader" />
     <None Include="res\shaders\TenRotateCube.shader" />
     <None Include="res\shaders\TestTextureBlend.shader" />
     <None Include="src\vendor\glm\detail\func_common.inl" />
@@ -313,6 +317,7 @@
     <ClInclude Include="src\tests\TestLightCasterDirectional.h" />
     <ClInclude Include="src\tests\Test.h" />
     <ClInclude Include="src\tests\TestClearColor.h" />
+    <ClInclude Include="src\tests\TestLightCasterFlashLight.h" />
     <ClInclude Include="src\tests\TestLightCasterPoint.h" />
     <ClInclude Include="src\tests\TestLightColor.h" />
     <ClInclude Include="src\tests\TestTenRotateCube.h" />
@@ -623,5 +628,14 @@
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="packages\Assimp.redist.3.0.0\build\native\Assimp.redist.targets" Condition="Exists('packages\Assimp.redist.3.0.0\build\native\Assimp.redist.targets')" />
+    <Import Project="packages\Assimp.3.0.0\build\native\Assimp.targets" Condition="Exists('packages\Assimp.3.0.0\build\native\Assimp.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Assimp.redist.3.0.0\build\native\Assimp.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Assimp.redist.3.0.0\build\native\Assimp.redist.targets'))" />
+    <Error Condition="!Exists('packages\Assimp.3.0.0\build\native\Assimp.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Assimp.3.0.0\build\native\Assimp.targets'))" />
+  </Target>
 </Project>

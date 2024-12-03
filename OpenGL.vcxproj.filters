@@ -87,6 +87,9 @@
     <ClCompile Include="src\tests\TestLightCasterPoint.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\tests\TestLightCasterFlashLight.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\Basic.shader" />
@@ -510,6 +513,9 @@
     <None Include="res\shaders\LightCube.shader" />
     <None Include="res\shaders\LightCasterDirectional.shader" />
     <None Include="res\shaders\LightCasterPoint.shader" />
+    <None Include="res\shaders\LightCasterFlashLight.shader" />
+    <None Include="res\shaders\Multiple_Light.shader" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Render.h">
@@ -1452,6 +1458,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\tests\TestLightCasterPoint.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tests\TestLightCasterFlashLight.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

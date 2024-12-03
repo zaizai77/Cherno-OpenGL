@@ -28,6 +28,7 @@
 #include "tests/TestLightColor.h"
 #include "tests/TestLightCasterDirectional.h"
 #include "tests/TestLightCasterPoint.h"
+#include "tests/TestLightCasterFlashLight.h"
 
 using namespace test;
 
@@ -82,6 +83,7 @@ int main(void)
     TestMenu->RegisterTest<test::TestLightColor>("TestLightColor");
     TestMenu->RegisterTest<test::TestLightCasterDirectional>("TestLightCasterDirectional");
     TestMenu->RegisterTest<test::TestLightCasterPoint>("TestLightCasterPoint");
+    TestMenu->RegisterTest<test::TestLightCasterFlashLight>("TestLightCasterFlashLight");
 
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))

@@ -1,5 +1,5 @@
 #pragma once
-#pragma once
+
 #include <Texture.h>
 
 #include "Test.h"
