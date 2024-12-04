@@ -23,6 +23,10 @@ public:
 	void Bind() const;
 	void UnBind() const;
 
+	unsigned int GetId() {
+		return m_RenderID;
+	}
+
 	//Set uniforms
 	void SetUniform1i(const std::string& name, int value);
 	void SetUniform1f(const std::string& name, float value);

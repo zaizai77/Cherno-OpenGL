@@ -90,6 +90,9 @@
     <ClCompile Include="src\tests\TestLightCasterFlashLight.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\tests\chapter3\model_loading.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\Basic.shader" />
@@ -516,6 +519,7 @@
     <None Include="res\shaders\LightCasterFlashLight.shader" />
     <None Include="res\shaders\Multiple_Light.shader" />
     <None Include="packages.config" />
+    <None Include="res\shaders\chapter3\model_loading.shader" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Render.h">
@@ -1461,6 +1465,15 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\tests\TestLightCasterFlashLight.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mesh.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Model.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tests\chapter3\model_loading.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
