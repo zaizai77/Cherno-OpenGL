@@ -179,7 +179,7 @@ namespace test {
             float angle = 20.0f * i;
             model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
             m_ColorShader->SetUniformMat4f("model", model);
-            GLCall(render.Draw(*m_VAO, *m_IndexBuffer, *m_ColorShader));
+            GLCall(render.DrawElements(*m_VAO, *m_IndexBuffer, *m_ColorShader));
         }
 
         /*GLCall(m_VAO->Bind());

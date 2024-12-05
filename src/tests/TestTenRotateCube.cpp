@@ -201,7 +201,7 @@ namespace test {
                 m_Shader->SetUniformMat4f("model", model);
                 m_Shader->SetUniformMat4f("view", view);
 
-                GLCall(render.Draw(*m_VAO, *m_IndexBuffer, *m_Shader));
+                GLCall(render.DrawElements(*m_VAO, *m_IndexBuffer, *m_Shader));
             }
 
         }

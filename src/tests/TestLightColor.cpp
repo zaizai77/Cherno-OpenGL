@@ -158,7 +158,7 @@ namespace test {
         GLCall(m_ColorShader->SetUniform3f("viewPos", camera.Position));
 
         GLCall(m_VAO->Bind());
-        GLCall(render.Draw(*m_VAO, *m_IndexBuffer, *m_ColorShader));
+        GLCall(render.DrawElements(*m_VAO, *m_IndexBuffer, *m_ColorShader));
 
         GLCall(m_VAO->Bind());
         GLCall(m_CubeShader->Bind());
@@ -169,7 +169,7 @@ namespace test {
         model = glm::translate(model, lightPos);
         model = glm::scale(model, glm::vec3(0.2f));
         m_CubeShader->SetUniformMat4f("model", model);
-        GLCall(render.Draw(*m_VAO, *m_IndexBuffer, *m_CubeShader));
+        GLCall(render.DrawElements(*m_VAO, *m_IndexBuffer, *m_CubeShader));
         
 	}
 
