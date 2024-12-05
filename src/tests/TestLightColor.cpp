@@ -12,7 +12,7 @@ namespace test {
     void TestLightColor_scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
     void TestLightColor_mouse_callback(GLFWwindow* window, double xposIn, double yposIn);
 
-	TestLightColor::TestLightColor() : camera(glm::vec3(0.0f,0.0f,6.0f)) {
+	TestLightColor::TestLightColor() {
         float vertices[] = {
     -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  0.0f,  0.0f,
          0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  1.0f,  0.0f,

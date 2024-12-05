@@ -70,6 +70,7 @@ public:
     // processes input received from any keyboard-like input system. Accepts input parameter in the form of camera defined ENUM (to abstract it from windowing systems)
     void ProcessKeyboard(Camera_Movement direction, float deltaTime)
     {
+        //std::cout <<" before " << Position.r << "." << Position.g << "." << Position.b << std::endl;
         float velocity = MovementSpeed * deltaTime;
         if (direction == FORWARD)
             Position += Front * velocity;
@@ -79,6 +80,8 @@ public:
             Position -= Right * velocity;
         if (direction == RIGHT)
             Position += Right * velocity;
+
+        //std::cout << " after " << Position.r << "." << Position.g << "." << Position.b << std::endl;
     }
 
     // processes input received from a mouse input system. Expects the offset value in both the x and y direction.

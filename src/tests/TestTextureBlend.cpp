@@ -81,7 +81,7 @@ namespace test {
 			m_Shader->SetUniformMat4f("u_MVP", mvp);
 			m_Shader->SetUniform1f("u_percent", m_TranslationA);
 
-			GLCall(renderer.Draw(*m_VAO, *m_IndexBuffer, *m_Shader));
+			GLCall(renderer.DrawElements(*m_VAO, *m_IndexBuffer, *m_Shader));
 		}
 	}
 

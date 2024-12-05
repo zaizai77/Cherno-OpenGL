@@ -3,6 +3,8 @@
 #include <iostream>
 #include <vector>
 
+#include "Camera.h"
+
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
@@ -20,7 +22,33 @@ namespace test {
 		virtual void OnUpdate(float delteTime) {}
 		virtual void OnRender() {}
 		virtual void OnImGuiRender() {}
-		virtual void ProcessInput(GLFWwindow* window) {}
+
+		void processInput(GLFWwindow* window)
+		{
+			if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+				glfwSetWindowShouldClose(window, true);
+
+			if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+				camera.ProcessKeyboard(FORWARD, deltaTime);
+			if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+				camera.ProcessKeyboard(BACKWARD, deltaTime);
+			if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+				camera.ProcessKeyboard(LEFT, deltaTime);
+			if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+				camera.ProcessKeyboard(RIGHT, deltaTime);
+
+			//std::cout << "processInput" << std::endl;
+		}
+
+		float lastX = SCR_WIDTH / 2.0f;
+		float lastY = SCR_HEIGHT / 2.0f;
+		bool firstMouse = true;
+
+		// timing
+		float deltaTime = 0.0f;
+		float lastFrame = 0.0f;
+		
+		Camera camera = Camera(glm::vec3(0.0f, 0.0f, 3.0f));
 	};
 
 	class TestMenu : public Test {

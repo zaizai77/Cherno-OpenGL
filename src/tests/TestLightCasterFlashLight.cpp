@@ -12,7 +12,7 @@ namespace test {
     void TestLightCasterFlashLight_scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
     void TestLightCasterFlashLight_mouse_callback(GLFWwindow* window, double xposIn, double yposIn);
 
-    TestLightCasterFlashLight::TestLightCasterFlashLight() : camera(glm::vec3(0.0f, 0.0f, 6.0f)) {
+    TestLightCasterFlashLight::TestLightCasterFlashLight() {
         float vertices[] = {
     -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  0.0f,  0.0f,
          0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  1.0f,  0.0f,

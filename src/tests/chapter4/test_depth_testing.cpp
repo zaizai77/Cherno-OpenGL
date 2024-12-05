@@ -9,8 +9,7 @@
 #include <GLFW/glfw3.h>
 
 namespace test {
-	TestDepthTesting::TestDepthTesting() 
-		: camera(glm::vec3(0.0f, 0.0f, 3.0f)) {
+	TestDepthTesting::TestDepthTesting() {
 		m_ColorShader = std::make_unique<Shader>("res/shaders/chapter4/depth_testing.shader");
 		glEnable(GL_DEPTH_TEST);
 	}
@@ -148,16 +147,16 @@ namespace test {
         m_ColorShader->SetUniform1i("texture1", 0);
         model = glm::translate(model, glm::vec3(-1.0f, 0.0f, -1.0f));
         m_ColorShader->SetUniformMat4f("model", model);
-        render.Draw(*m_VAO0, *m_IndexBuffer0, *m_ColorShader);
+        render.DrawElements(*m_VAO0, *m_IndexBuffer0, *m_ColorShader);
 
         model = glm::translate(model, glm::vec3(2.0f, 0.0f, 0.0f));
         m_ColorShader->SetUniformMat4f("model", model);
-        render.Draw(*m_VAO0, *m_IndexBuffer0, *m_ColorShader);
+        render.DrawElements(*m_VAO0, *m_IndexBuffer0, *m_ColorShader);
 
         //plane
         m_ColorShader->SetUniform1i("texture1", 1);
         m_ColorShader->SetUniformMat4f("model", glm::mat4(1.0f));
-        render.Draw(*m_VAO1, *m_IndexBuffer1, *m_ColorShader);
+        render.DrawElements(*m_VAO1, *m_IndexBuffer1, *m_ColorShader);
 	}
 
 	void TestDepthTesting::OnImGuiRender() {

@@ -78,13 +78,13 @@ int main(void)
     test::TestMenu* TestMenu = new test::TestMenu(currentTest);
     currentTest = TestMenu;
 
-    //TestMenu->RegisterTest<test::TestClearColor>("Clear Color");
-    //TestMenu->RegisterTest<test::TestTexture2D>("TestTexture2D");
-    //TestMenu->RegisterTest<test::TestTextureBlend>("TestTextureBlend");
-    //TestMenu->RegisterTest<test::TestTenRotateCube>("TestTenRotateCube");
-    //TestMenu->RegisterTest<test::TestLightColor>("TestLightColor");
-    //TestMenu->RegisterTest<test::TestLightCasterDirectional>("TestLightCasterDirectional");
-    //TestMenu->RegisterTest<test::TestLightCasterPoint>("TestLightCasterPoint");
+    TestMenu->RegisterTest<test::TestClearColor>("Clear Color");
+    TestMenu->RegisterTest<test::TestTexture2D>("TestTexture2D");
+    TestMenu->RegisterTest<test::TestTextureBlend>("TestTextureBlend");
+    TestMenu->RegisterTest<test::TestTenRotateCube>("TestTenRotateCube");
+    TestMenu->RegisterTest<test::TestLightColor>("TestLightColor");
+    TestMenu->RegisterTest<test::TestLightCasterDirectional>("TestLightCasterDirectional");
+    TestMenu->RegisterTest<test::TestLightCasterPoint>("TestLightCasterPoint");
     TestMenu->RegisterTest<test::TestLightCasterFlashLight>("TestLightCasterFlashLight");
     TestMenu->RegisterTest<test::ModelLoading>("ModelLoading");
     TestMenu->RegisterTest<test::TestDepthTesting>("TestDepthTesting");

@@ -9,7 +9,7 @@
 
 namespace test {
 	ModelLoading::ModelLoading() 
-		: camera(glm::vec3(0.0f, 0.0f, 3.0f)), ourModel("res/model/nanosuit/nanosuit.obj") 
+		:  ourModel("res/model/nanosuit/nanosuit.obj") 
 	{
 		m_ColorShader = std::make_unique<Shader>("res/shaders/chapter3/model_loading.shader");
 		
@@ -31,7 +31,7 @@ namespace test {
 		float currentFrame = static_cast<float>(glfwGetTime());
 		deltaTime = currentFrame - lastFrame;
 		lastFrame = currentFrame;
-
+		//std::cout << lastFrame << std::endl;
 		processInput(m_window);
 
 		GLCall(glClearColor(0.0f, 0.0f, 0.0f, 1.0f));

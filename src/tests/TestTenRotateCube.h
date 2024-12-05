@@ -17,7 +17,6 @@ namespace test {
 		void OnUpdate(float deltaTime) override;
 		void OnRender() override;
 		void OnImGuiRender() override;
-		void ProcessInput(GLFWwindow* window) override;
 
 		void mouse_callback_fun(GLFWwindow* window, double xposIn, double yposIn);
 		void scroll_callback_fun(GLFWwindow* window, double xoffset, double yoffset);
@@ -43,14 +42,6 @@ namespace test {
 		float lastX = 800.0f / 2.0;
 		float lastY = 600.0 / 2.0;
 		float fov = 45.0f;
-
-		const unsigned int SCR_WIDTH = 960;
-		const unsigned int SCR_HEIGHT = 720;
-
-		// timing
-		float deltaTime = 0.0f;	// time between current frame and last frame
-		float lastFrame = 0.0f;
-
 	public:
 		
 	};
