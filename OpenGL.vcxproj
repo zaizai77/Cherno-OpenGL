@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -139,6 +139,7 @@
     <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\tests\chapter3\model_loading.cpp" />
     <ClCompile Include="src\tests\chapter4\test_depth_testing.cpp" />
+    <ClCompile Include="src\tests\chapter4\test_stencil_testing.cpp" />
     <ClCompile Include="src\tests\TestLightCasterDirectional.cpp" />
     <ClCompile Include="src\tests\Test.cpp" />
     <ClCompile Include="src\tests\TestClearColor.cpp" />
@@ -166,6 +167,8 @@
     <None Include="res\shaders\Basic.shader" />
     <None Include="res\shaders\chapter3\model_loading.shader" />
     <None Include="res\shaders\chapter4\depth_testing.shader" />
+    <None Include="res\shaders\chapter4\stencil_single.shader" />
+    <None Include="res\shaders\chapter4\stencil_testing.shader" />
     <None Include="res\shaders\LightCasterFlashLight.shader" />
     <None Include="res\shaders\LightCasterPoint.shader" />
     <None Include="res\shaders\LightColor.shader" />
@@ -321,6 +324,7 @@
     <ClInclude Include="src\Render.h" />
     <ClInclude Include="src\Shader.h" />
     <ClInclude Include="src\tests\chapter3\model_loading.h" />
+    <ClInclude Include="src\tests\chapter4\test_stencil_testing.h" />
     <ClInclude Include="src\tests\chapter4\test_depth_testing.h" />
     <ClInclude Include="src\tests\TestLightCasterDirectional.h" />
     <ClInclude Include="src\tests\Test.h" />
