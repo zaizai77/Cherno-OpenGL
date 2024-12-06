@@ -137,6 +137,10 @@ namespace test {
 
     void TestStencilTesting::OnRender() {
 
+        float currentFrame = static_cast<float>(glfwGetTime());
+        deltaTime = currentFrame - lastFrame;
+        lastFrame = currentFrame;
+
         GLCall(processInput(m_window));
 
         Render render;

@@ -96,6 +96,12 @@
     <ClCompile Include="src\tests\chapter4\test_depth_testing.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\tests\chapter4\test_stencil_testing.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tests\chapter4\test_blending_test.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\Basic.shader" />
@@ -524,6 +530,9 @@
     <None Include="packages.config" />
     <None Include="res\shaders\chapter3\model_loading.shader" />
     <None Include="res\shaders\chapter4\depth_testing.shader" />
+    <None Include="res\shaders\chapter4\stencil_single.shader" />
+    <None Include="res\shaders\chapter4\stencil_testing.shader" />
+    <None Include="res\shaders\chapter4\blending_test.shader" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Render.h">
@@ -1481,6 +1490,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\tests\chapter4\test_depth_testing.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tests\chapter4\test_stencil_testing.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tests\chapter4\test_blending_test.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

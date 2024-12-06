@@ -21,4 +21,5 @@ private:
 public:
     void Clear() const;
     void DrawElements(const VertexArray& va, const IndexBuffer& ib, const Shader& shader) const;
+    void DrawArrays(const VertexArray& va, const Shader& shader) const;
 };

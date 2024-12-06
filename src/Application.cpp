@@ -32,6 +32,7 @@
 #include "tests/chapter3/model_loading.h"
 #include "tests/chapter4/test_depth_testing.h"
 #include "tests/chapter4/test_stencil_testing.h"
+#include "tests/chapter4/test_blending_test.h"
 
 using namespace test;
 
@@ -90,6 +91,7 @@ int main(void)
     TestMenu->RegisterTest<test::ModelLoading>("ModelLoading");
     TestMenu->RegisterTest<test::TestDepthTesting>("TestDepthTesting");
     TestMenu->RegisterTest<test::TestStencilTesting>("TestStencilTesting");
+    TestMenu->RegisterTest<test::TestBlendingTest>("TestBlendingTest");
 
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
