@@ -138,6 +138,7 @@
     <ClCompile Include="src\Render.cpp" />
     <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\tests\chapter3\model_loading.cpp" />
+    <ClCompile Include="src\tests\chapter4\test_blending_sorted.cpp" />
     <ClCompile Include="src\tests\chapter4\test_blending_test.cpp" />
     <ClCompile Include="src\tests\chapter4\test_depth_testing.cpp" />
     <ClCompile Include="src\tests\chapter4\test_stencil_testing.cpp" />
@@ -167,6 +168,7 @@
     <None Include="packages.config" />
     <None Include="res\shaders\Basic.shader" />
     <None Include="res\shaders\chapter3\model_loading.shader" />
+    <None Include="res\shaders\chapter4\blending_sorted.shader" />
     <None Include="res\shaders\chapter4\blending_test.shader" />
     <None Include="res\shaders\chapter4\depth_testing.shader" />
     <None Include="res\shaders\chapter4\stencil_single.shader" />
@@ -326,6 +328,7 @@
     <ClInclude Include="src\Render.h" />
     <ClInclude Include="src\Shader.h" />
     <ClInclude Include="src\tests\chapter3\model_loading.h" />
+    <ClInclude Include="src\tests\chapter4\test_blending_sorted.h" />
     <ClInclude Include="src\tests\chapter4\test_blending_test.h" />
     <ClInclude Include="src\tests\chapter4\test_stencil_testing.h" />
     <ClInclude Include="src\tests\chapter4\test_depth_testing.h" />

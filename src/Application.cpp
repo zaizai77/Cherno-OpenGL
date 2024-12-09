@@ -33,6 +33,7 @@
 #include "tests/chapter4/test_depth_testing.h"
 #include "tests/chapter4/test_stencil_testing.h"
 #include "tests/chapter4/test_blending_test.h"
+#include "tests/chapter4/test_blending_sorted.h"
 
 using namespace test;
 
@@ -92,6 +93,7 @@ int main(void)
     TestMenu->RegisterTest<test::TestDepthTesting>("TestDepthTesting");
     TestMenu->RegisterTest<test::TestStencilTesting>("TestStencilTesting");
     TestMenu->RegisterTest<test::TestBlendingTest>("TestBlendingTest");
+    TestMenu->RegisterTest<test::TestBlendingSorted>("TestBlendingSorted");
 
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
