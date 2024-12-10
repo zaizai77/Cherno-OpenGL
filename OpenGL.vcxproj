@@ -138,9 +138,11 @@
     <ClCompile Include="src\IndexBuffer.cpp" />
     <ClCompile Include="src\Render.cpp" />
     <ClCompile Include="src\Shader.cpp" />
+    <ClCompile Include="src\SkyBox.cpp" />
     <ClCompile Include="src\tests\chapter3\model_loading.cpp" />
     <ClCompile Include="src\tests\chapter4\test_blending_sorted.cpp" />
     <ClCompile Include="src\tests\chapter4\test_blending_test.cpp" />
+    <ClCompile Include="src\tests\chapter4\test_cubemaps_skybox.cpp" />
     <ClCompile Include="src\tests\chapter4\test_depth_testing.cpp" />
     <ClCompile Include="src\tests\chapter4\test_stencil_testing.cpp" />
     <ClCompile Include="src\tests\chapter4\test_framebuffer.cpp" />
@@ -172,9 +174,11 @@
     <None Include="res\shaders\chapter3\model_loading.shader" />
     <None Include="res\shaders\chapter4\blending_sorted.shader" />
     <None Include="res\shaders\chapter4\blending_test.shader" />
+    <None Include="res\shaders\chapter4\cubemaps.shader" />
     <None Include="res\shaders\chapter4\depth_testing.shader" />
     <None Include="res\shaders\chapter4\framebuffer.shader" />
     <None Include="res\shaders\chapter4\framebuffer_screen.shader" />
+    <None Include="res\shaders\chapter4\skybox.shader" />
     <None Include="res\shaders\chapter4\stencil_single.shader" />
     <None Include="res\shaders\chapter4\stencil_testing.shader" />
     <None Include="res\shaders\LightCasterFlashLight.shader" />
@@ -332,7 +336,9 @@
     <ClInclude Include="src\Model.h" />
     <ClInclude Include="src\Render.h" />
     <ClInclude Include="src\Shader.h" />
+    <ClInclude Include="src\SkyBox.h" />
     <ClInclude Include="src\tests\chapter3\model_loading.h" />
+    <ClInclude Include="src\tests\chapter4\test_cubemaps_skybox.h" />
     <ClInclude Include="src\tests\chapter4\test_framebuffer.h" />
     <ClInclude Include="src\tests\chapter4\test_blending_sorted.h" />
     <ClInclude Include="src\tests\chapter4\test_blending_test.h" />

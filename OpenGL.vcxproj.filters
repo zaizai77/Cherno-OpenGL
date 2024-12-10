@@ -111,6 +111,12 @@
     <ClCompile Include="src\FrameBuffer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\SkyBox.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tests\chapter4\test_cubemaps_skybox.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\Basic.shader" />
@@ -545,6 +551,8 @@
     <None Include="res\shaders\chapter4\blending_sorted.shader" />
     <None Include="res\shaders\chapter4\framebuffer.shader" />
     <None Include="res\shaders\chapter4\framebuffer_screen.shader" />
+    <None Include="res\shaders\chapter4\skybox.shader" />
+    <None Include="res\shaders\chapter4\cubemaps.shader" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Render.h">
@@ -1517,6 +1525,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\FrameBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SkyBox.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tests\chapter4\test_cubemaps_skybox.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
