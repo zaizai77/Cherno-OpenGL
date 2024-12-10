@@ -8,6 +8,10 @@
 #include <glm/ext/matrix_transform.hpp>
 #include <GLFW/glfw3.h>
 
+#include <iostream>
+#include <vector>
+#include <map>
+
 namespace test {
     TestBlendingSorted::TestBlendingSorted() {
         m_ColorShader = std::make_unique<Shader>("res/shaders/chapter4/depth_testing.shader");
@@ -160,7 +164,7 @@ namespace test {
 
         // transparent vegetation locations
     // --------------------------------
-        vector<glm::vec3> vegetation
+        std::vector<glm::vec3> vegetation
         {
             glm::vec3(-1.5f, 0.0f, -0.48f),
             glm::vec3(1.5f, 0.0f, 0.51f),

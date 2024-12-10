@@ -34,6 +34,7 @@
 #include "tests/chapter4/test_stencil_testing.h"
 #include "tests/chapter4/test_blending_test.h"
 #include "tests/chapter4/test_blending_sorted.h"
+#include "tests/chapter4/test_framebuffer.h"
 
 using namespace test;
 
@@ -94,6 +95,7 @@ int main(void)
     TestMenu->RegisterTest<test::TestStencilTesting>("TestStencilTesting");
     TestMenu->RegisterTest<test::TestBlendingTest>("TestBlendingTest");
     TestMenu->RegisterTest<test::TestBlendingSorted>("TestBlendingSorted");
+    TestMenu->RegisterTest<test::TestFrameBuffer>("TestFrameBuffer");
 
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
@@ -107,22 +109,22 @@ int main(void)
         ImGui::NewFrame();
 
         if (currentTest) {
-            currentTest->OnStart(window);
-            currentTest->OnUpdate(0.0f);
+            GLCall(currentTest->OnStart(window));
+            GLCall(currentTest->OnUpdate(0.0f));
             //currentTest->ProcessInput(window);
-            currentTest->OnRender();
+            GLCall(currentTest->OnRender());
             ImGui::Begin("Test");
             // 后退
             if (currentTest != TestMenu && ImGui::Button("<-")) {
                 delete currentTest;
                 currentTest = TestMenu;
             }
-            currentTest->OnImGuiRender();
+            GLCall(currentTest->OnImGuiRender());
             ImGui::End();
         }
 
-        ImGui::Render();
-        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+        GLCall(ImGui::Render());
+        GLCall(ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData()));
 
 
         /* Swap front and back buffers */

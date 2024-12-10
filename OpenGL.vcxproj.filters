@@ -105,6 +105,12 @@
     <ClCompile Include="src\tests\chapter4\test_blending_sorted.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\tests\chapter4\test_framebuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FrameBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\Basic.shader" />
@@ -537,6 +543,8 @@
     <None Include="res\shaders\chapter4\stencil_testing.shader" />
     <None Include="res\shaders\chapter4\blending_test.shader" />
     <None Include="res\shaders\chapter4\blending_sorted.shader" />
+    <None Include="res\shaders\chapter4\framebuffer.shader" />
+    <None Include="res\shaders\chapter4\framebuffer_screen.shader" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Render.h">
@@ -1503,6 +1511,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\tests\chapter4\test_blending_sorted.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tests\chapter4\test_framebuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FrameBuffer.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

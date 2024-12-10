@@ -1,8 +1,6 @@
 #pragma once
-#pragma once
 
 #include "../Test.h"
-#include "Model.h"
 #include "Texture.h"
 
 #include <memory>
