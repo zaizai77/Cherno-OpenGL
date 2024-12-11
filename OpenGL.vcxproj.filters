@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Application.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="src\Render.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -115,6 +112,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\tests\chapter4\test_cubemaps_skybox.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tests\chapter4\cubemaps_environment.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

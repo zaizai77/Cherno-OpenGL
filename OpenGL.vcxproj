@@ -133,13 +133,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Application.cpp" />
     <ClCompile Include="src\FrameBuffer.cpp" />
     <ClCompile Include="src\IndexBuffer.cpp" />
     <ClCompile Include="src\Render.cpp" />
     <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\SkyBox.cpp" />
     <ClCompile Include="src\tests\chapter3\model_loading.cpp" />
+    <ClCompile Include="src\tests\chapter4\cubemaps_environment.cpp" />
     <ClCompile Include="src\tests\chapter4\test_blending_sorted.cpp" />
     <ClCompile Include="src\tests\chapter4\test_blending_test.cpp" />
     <ClCompile Include="src\tests\chapter4\test_cubemaps_skybox.cpp" />
