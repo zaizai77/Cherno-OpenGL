@@ -9,7 +9,7 @@
 Shader::Shader(const std::string& filepath) 
 	:m_FilePath(filepath),m_RenderID(0) {
     ShaderProgramSource source = ParseShader(filepath);
-    m_RenderID = CreateShader(source.VertexSource, source.FragmentSource);
+    m_RenderID = CreateShader(source.VertexSource, source.FragmentSource,source.GeometrySouce);
 }
 
 Shader::~Shader(){
@@ -30,11 +30,11 @@ ShaderProgramSource Shader::ParseShader(const std::string& filepath) {
     std::ifstream stream(filepath);
 
     enum class ShaderType {
-        NONE = -1, VERTEX = 0, FRAGMENT = 1
+        NONE = -1, VERTEX = 0, FRAGMENT = 1,GEOMETRY = 2
     };
 
     std::string line;
-    std::stringstream ss[2];
+    std::stringstream ss[3];
     ShaderType type = ShaderType::NONE;
     while (getline(stream, line)) {
         if (line.find("#shader") != std::string::npos) {
@@ -44,13 +44,16 @@ ShaderProgramSource Shader::ParseShader(const std::string& filepath) {
             else if (line.find("fragment") != std::string::npos) {
                 type = ShaderType::FRAGMENT;
             }
+            else if (line.find("geometry") != std::string::npos) {
+                type = ShaderType::GEOMETRY;
+            }
         }
         else {
             ss[(int)type] << line << '\n';
         }
     }
 
-    return { ss[0].str(),ss[1].str() };
+    return { ss[0].str(),ss[1].str(),ss[2].str()};
 }
 
 unsigned int Shader::CompileShader(unsigned int type, const std::string& source) {
@@ -81,10 +84,17 @@ unsigned int Shader::CompileShader(unsigned int type, const std::string& source)
 
 //我们向OpenGL提供我们实际的着色器源代码，我的着色器文本。我们想让OpenGL编译那个程序，将这两个链接到一个
 //独立的着色器程序，然后给我们一些那个着色器返回的唯一标识符，我们就可以绑定着色器并使用
-unsigned int Shader::CreateShader(const std::string& vertexShader, const std::string& fragmentShader) {
+unsigned int Shader::CreateShader(const std::string& vertexShader, const std::string& fragmentShader,const std::string& geometryShader) {
     unsigned int program = glCreateProgram();
     unsigned int vs = CompileShader(GL_VERTEX_SHADER, vertexShader);
     unsigned int fs = CompileShader(GL_FRAGMENT_SHADER, fragmentShader);
+    unsigned int gs;
+    if (geometryShader.length() != 0) {
+        gs = CompileShader(GL_GEOMETRY_SHADER, geometryShader);
+    }
+    else {
+        gs = -1;
+    }
 
     //将这两个着色器附加到我们的程序上
     glAttachShader(program, vs);
@@ -96,6 +106,12 @@ unsigned int Shader::CreateShader(const std::string& vertexShader, const std::st
     //删除一些无用的中间文件
     glDeleteShader(vs);
     glDeleteShader(fs);
+
+    if (gs != -1) {
+        glAttachShader(program, gs);
+        glLinkProgram(program);
+        glDeleteShader(gs);
+    }
 
     return program;
 }

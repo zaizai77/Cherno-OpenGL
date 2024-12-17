@@ -1,3 +1,61 @@
-﻿  cubemaps_environment.cpp
+﻿  FrameBuffer.cpp
+D:\vs2022\OpenGLProject\OpenGL\src\FrameBuffer.cpp(15,2): warning C4002: 类函数宏的调用“GLCall”参数过多
+  IndexBuffer.cpp
+D:\vs2022\OpenGLProject\OpenGL\src\IndexBuffer.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  Render.cpp
+  Shader.cpp
+D:\vs2022\OpenGLProject\OpenGL\src\Shader.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  SkyBox.cpp
+D:\vs2022\OpenGLProject\OpenGL\src\SkyBox.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  Texture.cpp
+D:\vs2022\OpenGLProject\OpenGL\src\Texture.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  VertexArray.cpp
+  VertexBuffer.cpp
+  TestClearColor.cpp
+  TestLightCasterDirectional.cpp
+  TestLightCasterFlashLight.cpp
+  TestLightCasterPoint.cpp
+  TestLightColor.cpp
+D:\vs2022\OpenGLProject\OpenGL\src\tests\TestLightColor.cpp(152,27): warning C4244: “=”: 从“double”转换到“T”，可能丢失数据
+          with
+          [
+              T=float
+          ]
+D:\vs2022\OpenGLProject\OpenGL\src\tests\TestLightColor.cpp(153,48): warning C4244: “=”: 从“double”转换到“T”，可能丢失数据
+          with
+          [
+              T=float
+          ]
+  TestTenRotateCube.cpp
+D:\vs2022\OpenGLProject\OpenGL\src\tests\TestTenRotateCube.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\vs2022\OpenGLProject\OpenGL\src\tests\TestTenRotateCube.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\vs2022\OpenGLProject\OpenGL\src\tests\TestTenRotateCube.cpp(199,29): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+  TestTexture2D.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\memory(3437,56): warning C4244: “参数”: 从“_Ty”转换到“unsigned int”，可能丢失数据
+          with
+          [
+              _Ty=unsigned __int64
+          ]
+D:\vs2022\OpenGLProject\OpenGL\src\tests\TestTexture2D.cpp(32): message : 查看对正在编译的函数 模板 实例化“std::unique_ptr<VertexBuffer,std::default_delete<VertexBuffer>> std::make_unique<VertexBuffer,float(&)[16],unsigned __int64,0>(float (&)[16],unsigned __int64 &&)”的引用
+  TestTextureBlend.cpp
+D:\vs2022\OpenGLProject\OpenGL\src\tests\TestTextureBlend.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\memory(3437,56): warning C4244: “参数”: 从“_Ty”转换到“unsigned int”，可能丢失数据
+          with
+          [
+              _Ty=unsigned __int64
+          ]
+D:\vs2022\OpenGLProject\OpenGL\src\tests\TestTextureBlend.cpp(33): message : 查看对正在编译的函数 模板 实例化“std::unique_ptr<VertexBuffer,std::default_delete<VertexBuffer>> std::make_unique<VertexBuffer,float(&)[16],unsigned __int64,0>(float (&)[16],unsigned __int64 &&)”的引用
+  model_loading.cpp
+  cubemaps_environment.cpp
 D:\vs2022\OpenGLProject\OpenGL\src\tests\chapter4\cubemaps_environment.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  test_blending_sorted.cpp
+  test_blending_test.cpp
+  正在生成代码...
+  正在编译...
+  test_cubemaps_skybox.cpp
+  test_depth_testing.cpp
+  test_framebuffer.cpp
+D:\vs2022\OpenGLProject\OpenGL\src\tests\chapter4\test_framebuffer.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  test_stencil_testing.cpp
+  正在生成代码...
   OpenGL.vcxproj -> D:\vs2022\OpenGLProject\OpenGL\Debug\OpenGL.exe

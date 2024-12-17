@@ -8,6 +8,7 @@
 struct ShaderProgramSource {
 	std::string VertexSource;
 	std::string FragmentSource;
+	std::string GeometrySouce;
 };
 
 class Shader {
@@ -39,6 +40,6 @@ public:
 private:
 	unsigned int CompileShader(unsigned int type, const std::string& source);
 	ShaderProgramSource ParseShader(const std::string& filepath);
-	unsigned int CreateShader(const std::string& vertexShader, const std::string& fragmentShader);
+	unsigned int CreateShader(const std::string& vertexShader, const std::string& fragmentShader, const std::string& geometryShader);
 	unsigned int GetUniformLoation(const std::string& name);
 };
