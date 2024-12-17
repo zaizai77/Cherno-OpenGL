@@ -139,7 +139,7 @@
     <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\SkyBox.cpp" />
     <ClCompile Include="src\tests\chapter3\model_loading.cpp" />
-    <ClCompile Include="src\tests\chapter4\normal_visualization.cpp" />
+    <ClCompile Include="src\tests\chapter4\instancing_quads.cpp" />
     <ClCompile Include="src\tests\chapter4\test_blending_sorted.cpp" />
     <ClCompile Include="src\tests\chapter4\test_blending_test.cpp" />
     <ClCompile Include="src\tests\chapter4\test_cubemaps_skybox.cpp" />
@@ -181,6 +181,7 @@
     <None Include="res\shaders\chapter4\framebuffer_screen.shader" />
     <None Include="res\shaders\chapter4\geometry_shader.shader" />
     <None Include="res\shaders\chapter4\geometry_shader_exploding.shader" />
+    <None Include="res\shaders\chapter4\instancing.shader" />
     <None Include="res\shaders\chapter4\normal_visualization.shader" />
     <None Include="res\shaders\chapter4\skybox.shader" />
     <None Include="res\shaders\chapter4\stencil_single.shader" />
