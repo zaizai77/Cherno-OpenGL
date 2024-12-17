@@ -114,7 +114,7 @@
     <ClCompile Include="src\tests\chapter4\test_cubemaps_skybox.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\tests\chapter4\geometry_shader_house.cpp">
+    <ClCompile Include="src\tests\chapter4\geometry_shader_expoling.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -554,6 +554,7 @@
     <None Include="res\shaders\chapter4\skybox.shader" />
     <None Include="res\shaders\chapter4\cubemaps.shader" />
     <None Include="res\shaders\chapter4\geometry_shader.shader" />
+    <None Include="res\shaders\chapter4\geometry_shader_exploding.shader" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Render.h">
