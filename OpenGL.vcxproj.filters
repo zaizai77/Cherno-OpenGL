@@ -114,7 +114,7 @@
     <ClCompile Include="src\tests\chapter4\test_cubemaps_skybox.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\tests\chapter4\instancing_quads.cpp">
+    <ClCompile Include="src\tests\chapter4\asteroids.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -558,6 +558,7 @@
     <None Include="res\shaders\chapter4\default.shader" />
     <None Include="res\shaders\chapter4\normal_visualization.shader" />
     <None Include="res\shaders\chapter4\instancing.shader" />
+    <None Include="res\shaders\chapter4\asteroids.shader" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Render.h">
